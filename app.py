@@ -27,7 +27,7 @@ def clean_text(text):
     text = str(text)
     text = re.sub(r"^.{0,80}?\(Reuters\)\s*-\s*", "", text)
     text = re.sub(r"\(Reuters\)", " ", text, flags=re.I)
-    text = re.sub(r"assets/real.gif", " ", text)
+    text = re.sub(r"assets/image_1.jpeg", " ", text)
     text = text.lower()
     text = re.sub(r"[^a-z\s]", " ", text)
     words = [stemmer.stem(w) for w in text.split() if w not in STOP_WORDS and len(w) > 2]
@@ -35,7 +35,7 @@ def clean_text(text):
 
 # 3. Sidebar with Branding, Sticker & Tips
 with st.sidebar:
-    st.image("assets/real.gif", width=110)
+    st.image("assets/sticker_1.png", width=110)
     st.title("VeriNews AI 🤖")
     st.markdown("Your smart assistant to spot misinformation and viral fake news.")
     st.divider()
@@ -53,7 +53,7 @@ st.markdown("#### *Verify before you amplify! Check if a news story is legit or 
 
 # Optional Top Banner Image (You can replace this URL with your own banner image)
 st.image(
-    "assets/real.gif",
+    "assets/image_3.jpeg",
     use_container_width=True
 )
 
@@ -88,7 +88,7 @@ if verify:
         if conf < 65:
             with col_sticker:
                 # Thinking Sticker
-                st.image("assets/real.gif", width=110)
+                st.image("assets/sticker_2.png", width=110)
             with col_result:
                 st.info(f"🤔 **UNCERTAIN ({conf:.1f}% Confidence)**")
                 st.write("The article shows mixed signals. Please verify this with a trusted news outlet.")
@@ -98,7 +98,7 @@ if verify:
             st.balloons()  # Celebration balloons animation!
             with col_sticker:
                 # Verified Real Sticker
-                st.image("assets/real.gif", width=110)
+                st.image("assets/sticker_1.png", width=110)
             with col_result:
                 st.success(f"✅ **REAL NEWS ({conf:.1f}% Confidence)**")
                 st.write("Great! This text matches the writing patterns of credible journalism.")
@@ -108,7 +108,7 @@ if verify:
             st.toast("🚨 Warning: High probability of fake news!", icon="🚨")
             with col_sticker:
                 # Fake Alert Sticker
-                st.image("assets/real.gif", width=110)
+                st.image("assets/sticker_2.png", width=110)
             with col_result:
                 st.error(f"🚨 **FAKE NEWS DETECTED ({conf:.1f}% Confidence)**")
                 st.write("Be careful! This shows strong signs of misinformation or clickbait. **Do not forward.**")
