@@ -11,6 +11,18 @@ st.set_page_config(
     page_icon="📰",
     layout="centered"
 )
+#Background 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #0e1117; 
+        background-image: url("assets/image_1.jpeg");
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # 2. Load Model and Vectorizer (Cached for fast loading)
 @st.cache_resource
