@@ -28,7 +28,7 @@ st.markdown(
     <style>
     .stApp {{
         background-color: #0e1117; 
-        background-image: url("data:image/jpeg;base64,{img_base64}");
+        /* background-image: url("data:image/jpeg;base64,{img_base64}"); */
         background-size: cover;
     }}
     </style>
