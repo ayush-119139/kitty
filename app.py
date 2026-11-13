@@ -88,7 +88,7 @@ if verify:
         if conf < 65:
             with col_sticker:
                 # Thinking Sticker
-                st.image("assets/sticker_2.png", width=110)
+                st.image("assets/thinking.png", width=110)
             with col_result:
                 st.info(f"🤔 **UNCERTAIN ({conf:.1f}% Confidence)**")
                 st.write("The article shows mixed signals. Please verify this with a trusted news outlet.")
@@ -98,7 +98,7 @@ if verify:
             st.balloons()  # Celebration balloons animation!
             with col_sticker:
                 # Verified Real Sticker
-                st.image("assets/sticker_1.png", width=110)
+                st.image("assets/sticker_2.png", width=110)
             with col_result:
                 st.success(f"✅ **REAL NEWS ({conf:.1f}% Confidence)**")
                 st.write("Great! This text matches the writing patterns of credible journalism.")
@@ -108,7 +108,7 @@ if verify:
             st.toast("🚨 Warning: High probability of fake news!", icon="🚨")
             with col_sticker:
                 # Fake Alert Sticker
-                st.image("assets/sticker_2.png", width=110)
+                st.image("assets/fake.png", width=110)
             with col_result:
                 st.error(f"🚨 **FAKE NEWS DETECTED ({conf:.1f}% Confidence)**")
                 st.write("Be careful! This shows strong signs of misinformation or clickbait. **Do not forward.**")
