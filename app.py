@@ -5,6 +5,17 @@ import streamlit as st
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
+import base64
+
+@st.cache_data
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+img_base64 = get_base64_of_bin_file("assets/image_1.jpeg")
+
+
 # 1. Page Configuration (Browser tab title, icon, and layout)
 st.set_page_config(
     page_title="VeriNews AI | Fake News Detector",
@@ -13,12 +24,13 @@ st.set_page_config(
 )
 #Background 
 st.markdown(
-    """
+    f"""
     <style>
-    .stApp {
+    .stApp {{
         background-color: #0e1117; 
-        background-image: url("assets/image_1.jpeg");
-    }
+        background-image: url("data:image/jpeg;base64,{img_base64}");
+        background-size: cover;
+    }}
     </style>
     """,
     unsafe_allow_html=True
