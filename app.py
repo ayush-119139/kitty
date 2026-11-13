@@ -35,7 +35,7 @@ def clean_text(text):
 
 # 3. Sidebar with Branding, Sticker & Tips
 with st.sidebar:
-    st.image("assets/sticker_1.png", width=110)
+    st.image("assets/image_2.jpeg", width=110)
     st.title("VeriNews AI 🤖")
     st.markdown("Your smart assistant to spot misinformation and viral fake news.")
     st.divider()
